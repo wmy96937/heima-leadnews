@@ -20,6 +20,11 @@ public class WmMaterialController {
     @Autowired
     private WmMaterialService wmMaterialService;
 
+    /**
+     * 上传图片
+     * @param multipartFile
+     * @return
+     */
     @PostMapping("/upload_picture")
     public ResponseResult uploadPicture(MultipartFile multipartFile){
         return wmMaterialService.uploadPicture(multipartFile);
