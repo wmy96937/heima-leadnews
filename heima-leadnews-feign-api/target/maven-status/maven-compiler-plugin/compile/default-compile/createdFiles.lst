@@ -1,0 +1,2 @@
+com\heima\apis\article\IArticleClient.class
+com\heima\config\FeignClientConfig.class
