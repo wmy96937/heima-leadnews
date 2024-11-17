@@ -17,6 +17,10 @@ public class WmChannelController {
     @Autowired
     private WmChannelService wmChannelService;
 
+    /**
+     * 获取所有频道
+     * @return
+     */
     @GetMapping("/channels")
     public ResponseResult channels(){
         return wmChannelService.channels();

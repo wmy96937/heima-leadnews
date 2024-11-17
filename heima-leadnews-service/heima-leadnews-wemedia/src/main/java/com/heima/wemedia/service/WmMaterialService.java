@@ -14,4 +14,10 @@ public interface WmMaterialService extends IService<WmMaterial> {
     ResponseResult uploadPicture(MultipartFile multipartFile);
 
     ResponseResult findList(WmMaterialDto dto);
+
+    ResponseResult delete(Integer id);
+
+    ResponseResult unfavorite(Integer id);
+
+    ResponseResult favorite(Integer id);
 }

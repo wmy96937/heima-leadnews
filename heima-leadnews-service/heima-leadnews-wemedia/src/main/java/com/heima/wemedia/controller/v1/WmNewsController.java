@@ -5,10 +5,7 @@ import com.heima.model.wemedia.dtos.WmNewsDto;
 import com.heima.model.wemedia.dtos.WmNewsPageReqDto;
 import com.heima.wemedia.service.WmNewsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author ASUS
@@ -35,9 +32,39 @@ public class WmNewsController {
      * @param dto
      * @return
      */
-    @PostMapping("/submitNews")
+    @PostMapping("/submit")
     public ResponseResult submitNews(@RequestBody WmNewsDto dto){
         ResponseResult responseResult=  wmNewsService.submitNews(dto);
+        return responseResult;
+    }
+
+
+    /**
+     * 文章详情
+     * @param id
+     * @return
+     */
+    @GetMapping("/one/{id}")
+    public ResponseResult detail(@PathVariable Integer id){
+        ResponseResult responseResult=  wmNewsService.detail(id);
+        return responseResult;
+    }
+
+    /**
+     * 文章详情
+     * @param id
+     * @return
+     */
+    @GetMapping("/del_news/{id}")
+    public ResponseResult deleteById(@PathVariable Integer id){
+        ResponseResult responseResult=  wmNewsService.deleteById(id);
+        return responseResult;
+    }
+
+
+    @PostMapping("/down_or_up")
+    public ResponseResult upperAndLowerShelves(@RequestBody WmNewsDto dto){
+        ResponseResult responseResult=  wmNewsService.upperAndLowerShelves(dto);
         return responseResult;
     }
 }

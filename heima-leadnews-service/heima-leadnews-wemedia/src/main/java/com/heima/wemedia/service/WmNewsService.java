@@ -14,4 +14,10 @@ public interface WmNewsService extends IService<WmNews> {
     ResponseResult findAll(WmNewsPageReqDto dto);
 
     ResponseResult submitNews(WmNewsDto dto);
+
+    ResponseResult detail(Integer id);
+
+    ResponseResult deleteById(Integer id);
+
+    ResponseResult upperAndLowerShelves(WmNewsDto dto);
 }
